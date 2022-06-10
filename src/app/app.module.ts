@@ -4,14 +4,17 @@ import { RouterModule } from '@angular/router';
 import { ToastrService } from './common/toastr.service';
 import { Error404Component } from './errors/404.component';
 
+import {
+  CreateEventComponent,
+  EventDetailsComponent,
+  EventRouteActivator,
+  EventThumbnailComponent,
+  EventsListResolver,
+  EventsListComponent,
+  EventService
+} from './events/index';
+
 import { EventsAppComponent } from './events-app.component';
-import { CreateEventComponent } from './events/create-events.component';
-import { EventDetailsComponent } from './events/event-details/event-details.component';
-import { EventRouteActivator } from './events/event-details/event-route-activator.service';
-import { EventThumbnailComponent } from './events/event-thumbnail.component';
-import { EventsListResolver } from './events/events-list-resolver.service';
-import { EventsListComponent } from './events/events-list.component';
-import { EventService } from './events/shared/event.service';
 import { NavBarComponent } from './nav/navbar.component';
 import { appRoutes } from './routes';
 
@@ -30,7 +33,7 @@ import { appRoutes } from './routes';
     RouterModule.forRoot(appRoutes)
   ],
   providers: [ // services
-    EventService,
+    EventService, 
     ToastrService,
     EventRouteActivator,
     EventsListResolver,
